@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+<%=packageName%>
+<!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="metro">
 		<g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-${domainClass.propertyName}" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
+		<div class="pagination" role="navigation">
 			<ul>
-				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><a class="home" href="\${createLink(uri: '/')}"><i class="icon-home"></i><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><i class="icon-list"></i><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="create-${domainClass.propertyName}" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 			<g:if test="\${flash.message}">
 			<div class="message" role="status">\${flash.message}</div>
 			</g:if>
@@ -25,14 +24,26 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:${propertyName}, action:'save']" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon edit"></i><span class="break"></span><g:message code="default.create.label" args="[entityName]" /></h2>
+						<div class="box-icon">
+							<a href="#" class="btn-close"><i class="icon-remove-sign"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<g:form action="save" <%= multiPart ? ' enctype="multipart/form-data"' : '' %> class="form-horizontal">
+							<fieldset class="form">
+								<g:render template="form"/>
+							</fieldset>
+							<fieldset class="form-actions">
+								<g:submitButton name="create" class="btn btn-primary" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
+							</fieldset>
+						</g:form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

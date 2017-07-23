@@ -4,10 +4,6 @@ input, select, textarea {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1.1;
-}
-
 /* BASE LAYOUT */
 
 html {
@@ -49,6 +45,7 @@ body {
 
 #grailsLogo {
 	background-color: #abbf78;
+	padding-left: 30px;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -268,7 +265,7 @@ textarea {
 }
 
 input[type=checkbox], input[type=radio] {
-	background-color: transparent;
+	background-color: #f3f3ff;
 	border: 0;
 	padding: 0;
 }
@@ -311,8 +308,6 @@ ul.one-to-many li.add {
 fieldset.embedded {
 	background-color: transparent;
 	border: 1px solid #CCCCCC;
-	margin-left: 0;
-	margin-right: 0;
 	padding-left: 0;
 	padding-right: 0;
 	   -moz-box-shadow: none;
@@ -331,7 +326,7 @@ fieldset.embedded legend {
 	font-size: 0.8em;
 	line-height: 2;
 	margin: 1em 2em;
-	padding: 0.25em;
+	padding: 0.5em;
 }
 
 .message {
@@ -359,13 +354,13 @@ fieldset.embedded legend {
 
 .errors li {
 	list-style: none;
-	background: transparent url(../images/skin/exclamation.png) 0.5em 50% no-repeat;
-	text-indent: 2.2em;
+	background: transparent url(../images/skin/exclamation.png) 0 50% no-repeat;
+	text-indent: 22px;
 }
 
 .message {
-	background: transparent url(../images/skin/information.png) 0.5em 50% no-repeat;
-	text-indent: 2.2em;
+	background: transparent url(../images/skin/information.png) 0 50% no-repeat;
+	text-indent: 22px;
 }
 
 /* form fields with errors */
@@ -571,11 +566,6 @@ th:hover, tr:hover {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
-}
-
-.ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,
-.ie7 .buttons input.delete, .ie7 .buttons input.edit, .ie7 .buttons input.save {
-	padding-left: 36px;
 }
 
 .buttons .delete {
